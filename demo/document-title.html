@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="../images/favicon.ico">
+    <title>document-title</title>
+  </head>
+
+  <body>
+    <script>
+      document.addEventListener('visibilitychange', function () { //浏览器切换事件
+        if (document.visibilityState === 'hidden') { //状态判断
+          document.title = '(●――●)喔呦,崩溃啦!';
+          // document.getElementById('icon').href = '../images/failure.ico';
+          document.querySelector('link[rel=icon]').href = '../images/failure.ico';
+        } else {
+          document.title = '(/≥▽≤)咦?又好了!';
+          document.querySelector('link[rel=icon]').href = '../images/favicon.ico';//需要修改的图片路径
+          setTimeout(function () {
+            document.title = 'Hi, KwoTsing';
+          }, 2000)//计时器
+        }
+      })
+    </script>
+  </body>
+</html>
